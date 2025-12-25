@@ -40,6 +40,7 @@ public class Test {
         }
 
         int k = sc.nextInt();
+        k = k % n;
 
         int[] rotatedArr = new int[n];
 
