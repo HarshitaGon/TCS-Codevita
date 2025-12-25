@@ -6,23 +6,17 @@
     Note : Keep the first of the array unaltered.
 
     Example 1:
-
         5  —Value of N
         {10, 20, 30, 40, 50}  —Element of Arr[ ]
         2  —–Value of K
-
     Output :
-
     40 50 10 20 30
 
     Example 2:
-
         4  —Value of N
         {10, 20, 30, 40}  —Element of Arr[]
         1  —–Value of K
-
     Output :
-
     40 10 20 30
 */
 
