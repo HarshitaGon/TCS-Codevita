@@ -26,22 +26,45 @@
     40 10 20 30
 */
 
-class Test {
+import java.util.*;
+
+public class Test {
     public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
 
-        for (int num = 2; num <= 10; num++) {   // numbers from 2 to 10
-            boolean isPrime = true;
+        int n = sc.nextInt();
+        int[] arr = new int[n];
 
-            for (int i = 2; i <= num / 2; i++) {
-                if (num % i == 0) {
-                    isPrime = false;
-                    break;
-                }
-            }
-
-            if (isPrime) {
-                System.out.println(num);
-            }
+        for (int i = 0; i < n; ++i) {
+            arr[i] = sc.nextInt();
         }
+
+        int k = sc.nextInt();
+
+        int[] rotatedArr = new int[n];
+
+        int index = 0;
+
+        for (int i = n - k; i < n; ++i) {
+            rotatedArr[index++] = arr[i];
+        }
+
+        for (int i = 0; i < n - k; ++i) {
+            rotatedArr[index++] = arr[i];
+        }
+
+        for (int i = 0; i < n; ++i) {
+            System.out.print(rotatedArr[i] + " ");
+        }
+
+        System.out.println();
+        sc.close();
     }
 }
+
+/*
+    Step 1: Copy last k elements to front
+            (Clockwise rotation → end elements come first)
+    // Step 2: Copy remaining elements
+
+*/
