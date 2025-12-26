@@ -44,3 +44,39 @@
     There are 50 valid permutations viz. {1,1}, {1, 3},.. {1, 9} {2,2}, {2, 4},… {2, 10} . . . {10, 2}, {10, 4},… {10, 10}.
     These 50 permutations, each sum up to an even number.
 */
+
+import java.util.*;
+
+public class Test {
+    static final long MOD = 1000000007L;
+
+    static long binaryExp(long base, long exp) {
+        long result = 1;
+        base %= MOD;
+
+        while (exp > 0) {
+            if ((exp & 1) == 1) {
+                result = (result * base) % MOD;
+            }
+
+            base = (base * base) % MOD;
+            exp >>= 1;
+        }
+
+        return result;
+    }
+
+    static long countOdd(long low, long high){
+        
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        long low = sc.nextLong();
+        long high = sc.nextLong();
+        long k = sc.nextLong();
+
+        long countOdd = countOdd(low, high);
+    }
+}
