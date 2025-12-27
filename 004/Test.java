@@ -96,7 +96,7 @@ public class Test {
         System.out.println(EvenSum);
 
         /*  Av mujhe Modular multiplicative inverse ka concept ny pata hai isiliye ye code ny kiye...
-        
+
             long total = power(E + O, K);           // (E + O)^K
             long diff = power(Math.abs(E - O), K);  // |E - O|^K
 
@@ -113,8 +113,8 @@ public class Test {
 }
 
 /*
-// count of odd, even
-// E + e = e
+count of odd, even
+E + e = e
 o + o = e
 e + o = o
 
