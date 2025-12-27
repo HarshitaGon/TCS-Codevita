@@ -66,8 +66,12 @@ public class Test {
         return result;
     }
 
-    static long countOdd(long low, long high){
-        
+    static long countEven(long low, long high) {
+        return (high/2 - (low - 1)/2);
+    }
+
+    static long countOdd(long low, long high) {
+        return (high - low + 1) - countEven(low, high);
     }
 
     public static void main(String[] args) {
@@ -77,6 +81,50 @@ public class Test {
         long high = sc.nextLong();
         long k = sc.nextLong();
 
-        long countOdd = countOdd(low, high);
+        long E = countEven(low, high);
+        long O = countOdd(low, high);
+
+        /*
+            EvenSum = ((E + O)^k + (E - O)^k) / 2
+        */
+
+        long total = binaryExp((E + O), k);     //(E + O)^k
+        long diff = binaryExp(Math.abs(E - O), k);      //(E - O)^k
+
+        long EvenSum = (total + diff) / 2;
+
+        System.out.println(EvenSum);
+
+        /*  Av mujhe Modular multiplicative inverse ka concept ny pata hai isiliye ye code ny kiye...
+        
+            long total = power(E + O, K);           // (E + O)^K
+            long diff = power(Math.abs(E - O), K);  // |E - O|^K
+
+            long inv2 = (MOD + 1) / 2; // modular inverse of 2
+
+            long answer = (total + diff) % MOD;
+            answer = (answer * inv2) % MOD;
+
+            System.out.println(answer);
+        */
+
+        sc.close();
     }
 }
+
+/*
+// count of odd, even
+// E + e = e
+o + o = e
+e + o = o
+
+k = 3 _ _ _
+
+let's generlise this:
+
+
+count of o = x
+count of e = y
+i = 0 -> x ^ 0 + y ^ k
+i = 2 -> x ^ 2 + y ^ k - 2
+*/
