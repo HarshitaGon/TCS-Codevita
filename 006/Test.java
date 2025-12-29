@@ -31,5 +31,17 @@ public class Test {
         Scanner sc = new Scanner(System.in);
 
         int n = sc.nextInt();
+        int bits = Integer.toBinaryString(n).length();
+
+        int mask = (1 << bits) - 1;
+        int ans = n ^ mask;
+
+        System.out.println(ans);
     }
 }
+
+
+// Toggle all bits of a number:
+// bits = length of binary of n
+// mask = (1 << bits) - 1
+// result = n ^ mask
