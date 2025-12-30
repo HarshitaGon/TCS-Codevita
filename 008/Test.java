@@ -29,3 +29,58 @@
     and 2s. The output is a sorted array from 0 to 2 based on risk severity.
 */
 
+import java.util.*;
+
+public class Test {
+    public static void swap(int[] arr, int i, int j) {
+        int temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int n = sc.nextInt();
+        int[] arr = new int[n];
+        for (int i = 0; i < n; ++i) {
+            arr[i] = sc.nextInt();
+        }
+
+        int leftPtr = 0, rightPtr = n - 1, itrPtr = 0;
+
+        while (itrPtr <= rightPtr) {
+            if (arr[itrPtr] == 0) {
+                swap(arr, itrPtr, leftPtr);
+                ++itrPtr; ++leftPtr;
+            }
+            else if (arr[itrPtr] == 1) {
+                ++itrPtr;
+            }
+            else {
+                swap(arr, itrPtr, rightPtr);
+                --rightPtr;
+            }
+        }
+
+        for (int i = 0; i < n; ++i) {
+            System.out.print(arr[i] + " ");
+        }
+
+        System.out.println();
+        sc.close();
+    }
+}
+
+//This is a proper implementation of the Dutch National Flag algorithm.
+
+// Dutch National Flag Algorithm :-
+// Sort array containing only 0, 1 and 2 in one traversal.
+// Use three pointers:
+// left → position for 0
+// itr  → current element
+// right → position for 2
+// If element is 0 → swap with left and move both
+// If element is 1 → move itr
+// If element is 2 → swap with right and move right
+// Time: O(N), Space: O(1)

@@ -1,6 +1,6 @@
 /*
     Question 1 :-
-    Problem Description -: Given an array Arr[ ] of N integers and a positive integer K.
+    Problem Description :- Given an array Arr[ ] of N integers and a positive integer K.
     The task is to cyclically rotate the array clockwise by K.
 
     Note : Keep the first of the array unaltered.
