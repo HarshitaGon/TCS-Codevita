@@ -1,4 +1,5 @@
 /*
+    Question 11:
     A furnishing company is manufacturing a new collection of curtains. The curtains are
     of two colors aqua(a) and black (b). The curtains color is represented as a string(str)
     consisting of a’s and b’s of length N. Then, they are packed (substring) into L number

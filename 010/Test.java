@@ -1,4 +1,5 @@
 /*
+    Question 10:
     A supermarket maintains a pricing format for all its products. A value N is printed
     on each product. When the scanner reads the value N on the item, the product of all
     the digits in the value N is the price of the item. The task here is to design the
