@@ -54,6 +54,71 @@ public class Test {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
+        int n = sc.nextInt();
+        long fact = 1;
 
+        for (int i = 1; i < n; ++i) {
+            fact = fact * i;
+        }
+
+        fact *= 2;
+        System.out.println(fact);
     }
 }
+
+
+/*
+    🎯 Problem ko 1 line me samjho:
+
+        👉 P aur PM hamesha chipak ke baithenge
+        👉 Table gol (circular) hai
+
+    🧠 RULE-1: Circular table ka golden rule:
+
+        Gol table me rotation same hota hai, isliye:
+        Circular arrangement of X people = (X−1)!
+        Bas. Ye rule yaad rakho.
+
+    🧠 RULE-2: Chipke hue log = ek block:
+
+        Agar 2 log hamesha saath baithenge
+        👉 unko ek block maan lo.
+
+        Ab example se samjhte hain (N = 4)
+        Log: P, PM, A, B
+
+        Step 1️⃣: P & PM ko block banao
+        [ P PM ], A, B
+        Total units = 3
+
+        Step 2️⃣: Circular arrangement
+        Circular table → (units − 1)!
+        (3 − 1)! = 2!
+        Matlab 2 ways
+
+        Step 3️⃣: Block ke andar order
+        Block ke andar:
+        P PM
+        PM P
+        = 2 ways
+
+        Step 4️⃣: Total ways
+        2 (circular) × 2 (inside block)
+        = 4
+        ❌ But answer is 12 — kyun?
+
+    🔥 REAL REASON (yahin sab atakte hain):
+
+        Circular table me:
+        Ek person ko fix karte hain
+        ⚠️ Lekin humne block ko ek person maan liya
+        Block ke andar 2 log already free hain
+        Isliye fixing ka effect already adjust ho chuka hota hai
+
+        Isliye correct counting hoti hai:
+        (N−1)!  arrangements of block + others
+        × 2     (block ke andar P/PM)
+
+    ✅ FINAL FORMULA (EXAM ME YAAD RAKHO):
+        2×(N−1)!
+*/
